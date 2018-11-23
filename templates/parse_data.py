@@ -1,4 +1,5 @@
 import json
+
 import templates as template
 
 
@@ -24,12 +25,9 @@ def load_data():
     answer, question, queue = __load_json_data()
     answer_list = []
     question_list = []
-    length = len(answer)
 
-    for index in range(length):
-        answer_element = template.answer.Answer(answer[index]['number'], answer[index]['answer'])
-        answer_list.append(answer_element)
-        question_element = template.question.Question(question[index]['number'], question[index]['tag'],
-                                                      question[index]['question'], question[index]['options'])
-        question_list.append(question_element)
+    for index in range(len(answer)):
+        answer_list.append(template.answer.Answer(answer[index]['number'], answer[index]['answer']))
+        question_list.append(template.question.Question(question[index]['number'], question[index]['tag'],
+                                                        question[index]['question'], question[index]['options']))
     return answer_list, question_list, queue

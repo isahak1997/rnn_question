@@ -540,7 +540,9 @@
     },
     {
       "number": "26",
-      "tag": [],
+      "tag": [
+        "operator"
+      ],
       "question": [
         "int i = 1, j = 10; ",
         "do{",
